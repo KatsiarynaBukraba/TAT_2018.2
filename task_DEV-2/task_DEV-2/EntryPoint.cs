@@ -12,6 +12,10 @@ namespace task_DEV_2
         {
             try
             {
+                if (args.Length != 1)
+                {
+                    throw new ArgumentException("A wrong number of parameters!");
+                }
                 Console.OutputEncoding = Encoding.UTF8;
                 Transliter transliter = new Transliter();
 
