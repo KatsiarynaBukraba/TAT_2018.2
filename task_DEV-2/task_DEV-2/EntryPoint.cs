@@ -3,6 +3,9 @@ using System.Text;
 
 namespace task_DEV_2
 {
+    /// <summary>
+    /// An entry point in the program.
+    /// </summary>
     class EntryPoint
     {
         static void Main(string[] args)

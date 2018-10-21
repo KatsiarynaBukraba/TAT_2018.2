@@ -4,8 +4,16 @@ using System.Text.RegularExpressions;
 
 namespace task_DEV_2
 {
+    /// <summary>
+    /// The class to translit a text from cyrillic to latin or vice versa.
+    /// </summary>
     public class Transliter
     {
+        /// <summary>
+        /// The method to translit a symbol from cyrillic to latin.
+        /// </summary>
+        /// <param name="symbol">A symbol to translit.</param>
+        /// <returns>The result of translit.</returns>
         private string CyrToLat(char symbol)
         {
             switch (symbol)
@@ -47,6 +55,11 @@ namespace task_DEV_2
             }
         }
 
+        /// <summary>
+        /// The method to translit a row from cyrillic to latin.
+        /// </summary>
+        /// <param name="row">A row to translit.</param>
+        /// <returns>The result of translit.</returns>
         private string CyrToLat(string row)
         {
             StringBuilder translitRowBuilder = new StringBuilder();
@@ -58,6 +71,11 @@ namespace task_DEV_2
             return translitRowBuilder.ToString();
         }
 
+        /// <summary>
+        /// The method to translit a row from latin to cyrillic.
+        /// </summary>
+        /// <param name="row">A row to translit.</param>
+        /// <returns>The result of translit.</returns>
         private string LatToCyr(string row)
         {
             StringBuilder translitRowBuilder = new StringBuilder();
@@ -155,15 +173,25 @@ namespace task_DEV_2
             return translitRowBuilder.ToString();
         }
 
+        /// <summary>
+        /// The method to identify language to choose a right type of translit.
+        /// </summary>
+        /// <param name="row">A row to translit.</param>
+        /// <returns>Check if row is latin.</returns>
         private bool IdentifyLanguage(string row)
         {
-            return Regex.IsMatch(row, "[а-яА-ЯеЁ]");
+            return Regex.IsMatch(row, "[a-zA-Z]");
         }
 
+        /// <summary>
+        /// The method to translit a text from cyrillic to latin or vice versa.
+        /// </summary>
+        /// <param name="row">A row to translit.</param>
+        /// <returns>The result of translit.</returns>
         public string Translit(string row)
         {
-            if (IdentifyLanguage(row)) return CyrToLat(row);
-            else return LatToCyr(row);
+            if (IdentifyLanguage(row)) return LatToCyr(row);
+            else return CyrToLat(row);
         }
 
     }
