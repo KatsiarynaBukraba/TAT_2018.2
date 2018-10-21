@@ -140,9 +140,9 @@ namespace task_DEV_2
                         {
                             i++;
                             if (symbols[i] == 'h') { translitRowBuilder.Append('ч'); break; }
-                            else { throw new Exception("We cann't translit this sequerence of symbols!"); }
+                            else { throw new Exception("This row contains wrong symbols combination."); }
                         }
-                        else { throw new Exception("We cann't translit this sequerence of symbols!"); }
+                        else { throw new Exception("This row contains wrong symbols combination."); }
                     case 's':
                         if (i + 2 < symbols.Length)
                         {
@@ -151,7 +151,7 @@ namespace task_DEV_2
                             {
                                 i++;
                                 if (symbols[i] == 'h') { translitRowBuilder.Append('щ'); break; }
-                                else throw new Exception("We cann't translit this sequerence of symbols!");
+                                else throw new Exception("This row contains wrong symbols combination.");
                             }
                             else if (symbols[i] == 'h') { translitRowBuilder.Append('ш'); break; }
                             else { translitRowBuilder.Append('c'); i--; break; }
@@ -163,8 +163,8 @@ namespace task_DEV_2
                             else { translitRowBuilder.Append('ш'); i--; break; }
                         }
                         else { translitRowBuilder.Append('с'); break; }
-                    case 'h': throw new Exception("We cann't translit this sequerence of symbols!");
-                    case 'j': throw new Exception("We cann't translit this sequerence of symbols!");
+                    case 'h': throw new Exception("This row contains wrong symbols combination.");
+                    case 'j': throw new Exception("This row contains wrong symbols combination.");
                     default: translitRowBuilder.Append(symbols[i]); break;
                 }
                 i++;
@@ -180,6 +180,10 @@ namespace task_DEV_2
         /// <returns>Check if row is latin.</returns>
         private bool IdentifyLanguage(string row)
         {
+            if (Regex.IsMatch(row, "[a-zA-Z]") && Regex.IsMatch(row, "[а-яА-ЯёЁ]"))
+            {
+                throw new Exception("This row contains symbols of different alphabets.");
+            }
             return Regex.IsMatch(row, "[a-zA-Z]");
         }
 
