@@ -2,11 +2,18 @@
 
 namespace task_DEV_3
 {
+    /// <summary>
+    /// The class to input data.
+    /// </summary>
     public class Inputter
     {
         private int newBase;
         private int number;
 
+        /// <summary>
+        /// The method to input data.
+        /// </summary>
+        /// <param name="args">Input data.</param>
         public void InputForConverter(string[] args)
         {
             if (args.Length != 2)
