@@ -9,7 +9,7 @@ namespace task_DEV_3
         /// </summary>
         /// <param name="number">Input number.</param>
         /// <param name="newBase">New base.</param>
-        /// <returns></returns>
+        /// <returns>The number in a new system.</returns>
         public string Convert(int number, int newBase)
         {
             StringBuilder convertedNumberBuilder = new StringBuilder();
