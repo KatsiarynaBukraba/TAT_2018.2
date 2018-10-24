@@ -13,6 +13,7 @@ namespace task_DEV_3
         public string Convert(int number, int newBase)
         {
             StringBuilder convertedNumberBuilder = new StringBuilder();
+            string allSymbols = "0123456789ABCDEFGHIJ";
             int indexSing = 0;
 
             if (number < 0)
@@ -24,18 +25,12 @@ namespace task_DEV_3
 
             do
             {
-                convertedNumberBuilder.Insert(indexSing, GetPartOfNumber((int)(number % newBase)));
+                convertedNumberBuilder.Insert(indexSing, allSymbols[number % newBase]);
                 number /= newBase;
             }
             while (number > 0);
 
             return convertedNumberBuilder.ToString();
-        }
-
-        public char GetPartOfNumber(int numberOfSymbol)
-        {
-            string allSymbols = "0123456789ABCDEFGHIJ";
-            return allSymbols[numberOfSymbol];
         }
     }
 }
