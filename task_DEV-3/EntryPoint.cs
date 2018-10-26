@@ -11,18 +11,17 @@ namespace task_DEV_3
         {
             try
             {
-                Inputter inputter = new Inputter();
-                inputter.InputForConverter(args);
+                DataInChecker checker = new DataInChecker();
+                checker.InputForConverter(args);
 
-                Converter converter = new Converter();
+                NumberConverter numberConverter = new NumberConverter();
 
-                Console.WriteLine(inputter.GetNumber() + "  " + inputter.GetNewBase());
-                Console.WriteLine(converter.Convert(inputter.GetNumber(), inputter.GetNewBase()));
+                Console.WriteLine(checker.GetNumber() + "  " + checker.GetNewBase());
+                Console.WriteLine(numberConverter.Convert(checker.GetNumber(), checker.GetNewBase()));
             }
             catch (Exception e)
             {
                 Console.WriteLine(e);
-                throw;
             }
         }
     }

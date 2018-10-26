@@ -42,9 +42,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Converter.cs" />
+    <Compile Include="NumberConverter.cs" />
     <Compile Include="EntryPoint.cs" />
-    <Compile Include="Inputter.cs" />
+    <Compile Include="DataInChecker.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

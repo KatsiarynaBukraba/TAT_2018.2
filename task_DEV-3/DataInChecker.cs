@@ -3,15 +3,15 @@
 namespace task_DEV_3
 {
     /// <summary>
-    /// The class to input data.
+    /// The class to input validity data.
     /// </summary>
-    public class Inputter
+    public class DataInChecker
     {
-        private int newBase;
+        private int radix;
         private int number;
 
         /// <summary>
-        /// The method to input data.
+        /// The method for data validity check.
         /// </summary>
         /// <param name="args">Input data.</param>
         public void InputForConverter(string[] args)
@@ -26,12 +26,12 @@ namespace task_DEV_3
                 throw new ArgumentException("Wrong input of a number!");
             }
 
-            if (!int.TryParse(args[1], out newBase))
+            if (!int.TryParse(args[1], out radix))
             {
                 throw new ArgumentException("Wrong input of a base!");
             }
 
-            if (newBase < 2 || newBase > 20)
+            if (radix < 2 || radix > 20)
             {
                 throw new ArgumentException("The base isn't in a available diapason!");
             }
@@ -44,7 +44,7 @@ namespace task_DEV_3
 
         public int GetNewBase()
         {
-            return newBase;
+            return radix;
         }
     }
 }

@@ -2,31 +2,33 @@
 
 namespace task_DEV_3
 {
-    public class Converter
+    public class NumberConverter
     {
+        const string allSymbols = "0123456789ABCDEFGHIJ";
+
         /// <summary>
         /// The method to convert a number of decimal system to the other.
         /// </summary>
         /// <param name="number">Input number.</param>
-        /// <param name="newBase">New base.</param>
+        /// <param name="radix">New radix.</param>
         /// <returns>The number in a new system.</returns>
-        public string Convert(int number, int newBase)
+        public string Convert(int number, int radix)
         {
             StringBuilder convertedNumberBuilder = new StringBuilder();
-            string allSymbols = "0123456789ABCDEFGHIJ";
-            int indexSing = 0;
+            
+            int indexString = 0;
 
             if (number < 0)
             {
                 number *= -1;
-                indexSing++;
+                indexString++;
                 convertedNumberBuilder.Append("-");
             }
 
             do
             {
-                convertedNumberBuilder.Insert(indexSing, allSymbols[number % newBase]);
-                number /= newBase;
+                convertedNumberBuilder.Insert(indexString, allSymbols[number % radix]);
+                number /= radix;
             }
             while (number > 0);
 
