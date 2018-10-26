@@ -16,8 +16,8 @@ namespace task_DEV_3
 
                 NumberConverter numberConverter = new NumberConverter();
 
-                Console.WriteLine(checker.GetNumber() + "  " + checker.GetNewBase());
-                Console.WriteLine(numberConverter.Convert(checker.GetNumber(), checker.GetNewBase()));
+                Console.WriteLine(checker.Number + "  " + checker.Radix);
+                Console.WriteLine(numberConverter.Convert(checker.Number, checker.Radix));
             }
             catch (Exception e)
             {

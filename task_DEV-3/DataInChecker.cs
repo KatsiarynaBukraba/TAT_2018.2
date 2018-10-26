@@ -33,18 +33,11 @@ namespace task_DEV_3
 
             if (radix < 2 || radix > 20)
             {
-                throw new ArgumentException("The base isn't in aт available diapason!");
+                throw new ArgumentException("The base isn't in an available diapason!");
             }
         }
 
-        public int GetNumber()
-        {
-            return number;
-        }
-
-        public int GetNewBase()
-        {
-            return radix;
-        }
+        public int Number { get; set; }
+        public int Radix { get; set; }
     }
 }
