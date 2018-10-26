@@ -28,12 +28,12 @@ namespace task_DEV_3
 
             if (!int.TryParse(args[1], out radix))
             {
-                throw new ArgumentException("Wrong input of a base!");
+                throw new ArgumentException("Wrong input of a radix!");
             }
 
             if (radix < 2 || radix > 20)
             {
-                throw new ArgumentException("The base isn't in a available diapason!");
+                throw new ArgumentException("The base isn't in aт available diapason!");
             }
         }
 
