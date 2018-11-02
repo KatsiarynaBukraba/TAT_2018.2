@@ -51,7 +51,7 @@ namespace task_DEV_4
 
             do
             {
-                if (!GetTag().Trim().Contains(tags.Peek()))
+                if (!(GetTag().Trim().Contains(tags.Peek()) && GetTag().Trim().Contains('/')))
                 {
                     node.childNodes.Add(GetNode());
                 }
