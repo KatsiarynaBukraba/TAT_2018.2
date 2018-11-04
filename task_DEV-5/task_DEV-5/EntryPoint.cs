@@ -8,7 +8,7 @@ namespace task_DEV_5
     public enum Command { CountBrands = 1, CountAll, AveragePrice, AveragePriceType, Exit }
 
     /// <summary>
-    /// This class is a entry point in the program. 
+    /// This class is an entry point in the program. 
     /// </summary>
     class EntryPoinr
     {

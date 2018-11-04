@@ -3,7 +3,7 @@
 namespace task_DEV_5
 {
     /// <summary>
-    /// Exposes an method to execution and to get a result of command.
+    /// Exposes an method to execution and to get a result of commands.
     /// </summary>
     public interface ICommand
     {
