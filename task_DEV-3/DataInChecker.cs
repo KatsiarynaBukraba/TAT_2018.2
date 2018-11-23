@@ -30,11 +30,6 @@ namespace task_DEV_3
             {
                 throw new ArgumentException("Wrong input of a radix!");
             }
-
-            if (radix < 2 || radix > 20)
-            {
-                throw new ArgumentException("The base isn't in an available diapason!");
-            }
         }
 
         public int Number { get; set; }
