@@ -69,22 +69,23 @@ namespace task_DEV_5
                         goto chooseCommand;
                     }
                     Invoker invoker = new Invoker();
+                    Receiver receiver = new Receiver(carList);
 
                     switch (command)
                     {
                         case Command.CountBrands:
-                            invoker.Set(new CountBrands());
+                            invoker.Set(new CountBrandsCommand(receiver));
                             break;
                         case Command.CountAll:
-                            invoker.Set(new CountAll());
+                            invoker.Set(new CountAllCommand(receiver));
                             break;
                         case Command.AveragePrice:
-                            invoker.Set(new AveragePrice());
+                            invoker.Set(new AveragePriceCommand(receiver));
                             break;
                         case Command.AveragePriceType:
                             Console.WriteLine("Input brand: ");
                             string brand = Console.ReadLine();
-                            invoker.Set(new AveragePriceType(brand));
+                            invoker.Set(new AveragePriceTypeCommand(receiver, brand));
                             break;
                         case Command.Exit:
                             return;
@@ -93,7 +94,7 @@ namespace task_DEV_5
                             goto chooseCommand;
                     }
 
-                    Console.WriteLine($"\n{command}: {invoker.Execute(carList)}");
+                    Console.WriteLine($"\n{command}: {invoker.Execute()}");
                 }
                 while (true);
 

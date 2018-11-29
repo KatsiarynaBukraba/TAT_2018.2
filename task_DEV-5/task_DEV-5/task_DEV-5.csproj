@@ -45,14 +45,15 @@
   <ItemGroup>
     <Compile Include="Car.cs" />
     <Compile Include="CarBuilder.cs" />
-    <Compile Include="Commands\AveragePrice.cs" />
-    <Compile Include="Commands\AveragePriceType.cs" />
-    <Compile Include="Commands\CountAll.cs" />
-    <Compile Include="Commands\CountBrands.cs" />
+    <Compile Include="Commands\AveragePriceCommand.cs" />
+    <Compile Include="Commands\AveragePriceTypeCommand.cs" />
+    <Compile Include="Commands\CountAllCommand.cs" />
+    <Compile Include="Commands\CountBrandsCommand.cs" />
     <Compile Include="EntryPoint.cs" />
     <Compile Include="ICommand.cs" />
     <Compile Include="Invoker.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Receiver.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

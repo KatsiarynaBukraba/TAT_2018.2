@@ -7,6 +7,6 @@ namespace task_DEV_5
     /// </summary>
     public interface ICommand
     {
-        string Execute(List<Car> list);
+        string Execute();
     }
 }

@@ -9,14 +9,8 @@ namespace task_DEV_5
     {
         ICommand command;
 
-        public void Set(ICommand command)
-        {
-            this.command = command;
-        }
+        public void Set(ICommand command) => this.command = command;
 
-        public string Execute(List<Car> list)
-        {
-            return command.Execute(list);
-        }
+        public string Execute() => command.Execute();
     }
 }
